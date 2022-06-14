@@ -141,6 +141,7 @@ const attack = document.getElementById("attack");
 const retreat = document.getElementById("retreat");
     retreat.addEventListener("click", function(){
         let answer = confirm(`${player.name}, You retreat!`);
+            console.log(answer);
             if(answer === true){
                 windows.location.reload();
             }
