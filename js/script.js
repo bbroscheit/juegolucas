@@ -151,6 +151,23 @@ const potionUse = document.getElementById("potion");
             document.getElementById("mcHealth").innerHTML = player.health;
             potion--;
             document.getElementById("potion").innerHTML = `Use a Potion(${potion})`;
+                if(Math.floor(Math.random()*7) > 2){
+                
+                    player.health -= enemy[enemyNum].attack;
+                    document.getElementById("mcHealth").innerHTML = player.health;
+                    let attackerEnemy = true;
+                    alert("The enemy attacked you!");
+                        if(attackerEnemy === true && Math.floor(Math.random()*7) > 4 ){
+                        
+                            enemy[enemyNum].health -= player.counterAttack;
+                            document.getElementById("enemyHealth").innerHTML = enemy[enemyNum].health;
+                            alert("You counterAttack the enemy!");
+                        }else{
+                            alert("Enemy Block your attack!");
+                        }
+            }else{
+                alert("The enemy missed!");
+            }
         }else{
             alert("You don't have any potions!");
         }
