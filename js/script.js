@@ -73,7 +73,7 @@ const attack = document.getElementById("attack");
         round = 0;
         while(player.health > 0 && enemy[enemyNum].health > 0){
         if  (round === 0){ 
-            if(Math.floor(Math.random()*7) > 4){
+            if(Math.floor(Math.random()*7) > 2){
                 
                 enemy[enemyNum].health -= player.attack;
                 document.getElementById("enemyHealth").innerHTML = enemy[enemyNum].health;
@@ -93,7 +93,7 @@ const attack = document.getElementById("attack");
                 alert("You missed!");
             }
 
-            if(Math.floor(Math.random()*7) > 4){
+            if(Math.floor(Math.random()*7) > 2){
                 
                 player.health -= enemy[enemyNum].attack;
                 document.getElementById("mcHealth").innerHTML = player.health;
@@ -115,11 +115,13 @@ const attack = document.getElementById("attack");
        break 
     } 
     if(player.health <= 0){
-        alert("You lose!");
+        alert(`${player.name}, You lose!`);
     }else if(enemy[enemyNum].health <= 0){
-        alert("You win!");
+        alert(`${player.name}, You win!`);
     }
 });
+
+
 
 
 
