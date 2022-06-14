@@ -140,8 +140,10 @@ const attack = document.getElementById("attack");
 
 const retreat = document.getElementById("retreat");
     retreat.addEventListener("click", function(){
-        confirm(`${player.name}, You retreat!`);
-        windows.location.reload();
+        let answer = confirm(`${player.name}, You retreat!`);
+            if(answer === true){
+                windows.location.reload();
+            }
     });
 
 const potionUse = document.getElementById("potion");
