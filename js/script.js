@@ -53,6 +53,7 @@ function reset (){
 }
 
 let enemyNum = Math.floor(Math.random() * 3);
+let potion = 1;
 
 document.getElementById("createMc").addEventListener("click", function(){
     player.name = prompt("What is your name?");
@@ -86,8 +87,14 @@ const attack = document.getElementById("attack");
                 enemy[enemyNum].health -= player.attack;
                 document.getElementById("enemyHealth").innerHTML = enemy[enemyNum].health;
                 let attacker = true;
-                alert("You attacked the enemy!");
-                
+                let randomPotion = Math.floor(Math.random()*8);
+                    if(randomPotion > 5){ 
+                        potion++;
+                        alert("You have gained a potion!");
+                        document.getElementById("potion").innerHTML = `Use a Potion(${potion})`;	
+                    }
+                    alert("You attacked the enemy!");
+
                     if(attacker === true && Math.floor(Math.random()*7) > 4 ){
                         
                         player.health -= enemy[enemyNum].counterAttack;
@@ -129,12 +136,25 @@ const attack = document.getElementById("attack");
     }
 });
 
+
+
 const retreat = document.getElementById("retreat");
     retreat.addEventListener("click", function(){
         alert(`${player.name}, You retreat!`);
         windows.location.reload();
     });
 
+const potionUse = document.getElementById("potion");
+    potionUse.addEventListener("click", function(){
+        if(potion > 0){
+            player.health += 25;
+            document.getElementById("mcHealth").innerHTML = player.health;
+            potion--;
+            document.getElementById("potion").innerHTML = `Use a Potion(${potion})`;
+        }else{
+            alert("You don't have any potions!");
+        }
+    });
 
 
 
