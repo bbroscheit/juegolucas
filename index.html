@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="styles/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Attack in the Whispering Woods</h1>
+        <div class = container>
+            <!--<span>Rules</span>
+            <ul>
+                <li>One attack per turn</li>
+                <li>regla 2</li>
+                <li>regla 3</li>
+                <li>regla 4</li>
+            </ul>-->
+            <button id="createMc"> let's start</button>
+            <div class ="combat">
+                <div class="player">
+                    <h2 id="mcName" class="name"></h2>
+                    <img id="mcImg" src="./assets/images/player.jpg" alt="" class="imagen"/>
+                        <div class="stats">
+                            <span id="mcHealth"></span>
+                            <span id="mcAttack"></span>
+                            <span id="mcDefense"></span>
+                            <span id="mcCounterAttack"></span>
+                        </div>
+                </div>
+                <div class="enemy">
+                    <h2 id="enemyName" class="name"></h2>
+                    <img id="enemyImg" src="./assets/images/warrior.jpg" alt="" class="imagen" />
+                        <div class="stats"> 
+                            <span id="enemyHealth"></span>
+                            <span id="enemyAttack"></span>
+                            <span id="enemyDefense"></span>
+                            <span id="enemyCounterAttack"></span>
+                        </div>
+                </div>
+            </div>
+            <div class="botones">
+                <button id="attack">Attack</button>
+                <button id="retreat">Retreat</button>
+            </div>
+        </div>
+    <script src="js/script.js"></script>
+    </body>
+</html>
