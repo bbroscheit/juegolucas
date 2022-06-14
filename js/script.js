@@ -132,7 +132,7 @@ const attack = document.getElementById("attack");
 const retreat = document.getElementById("retreat");
     retreat.addEventListener("click", function(){
         alert(`${player.name}, You retreat!`);
-        reset();
+        windows.location.reload();
     });
 
 
