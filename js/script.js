@@ -44,6 +44,14 @@ let player = {
     img:""
 }
 
+function reset (){
+    player.name = "";
+    player.health = 100;
+    player.attack = 0;
+    player.defense = 0;
+    player.counterAttack = 0;
+}
+
 let enemyNum = Math.floor(Math.random() * 3);
 
 document.getElementById("createMc").addEventListener("click", function(){
@@ -121,6 +129,11 @@ const attack = document.getElementById("attack");
     }
 });
 
+const retreat = document.getElementById("retreat");
+    retreat.addEventListener("click", function(){
+        alert(`${player.name}, You retreat!`);
+        reset();
+    });
 
 
 
